@@ -16,11 +16,10 @@ const userSchema = new mongoose.Schema({
             type:String,
             require:true
         },
-        created: {
-            type:Date,
-            require:true,
-            default:Date.now,
-        },
-    });
+        
+        },{
+            timeStamps: true,
+        }
+    );
 
 module.exports = mongoose.model('items', userSchema);
