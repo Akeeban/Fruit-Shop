@@ -1,31 +1,100 @@
- <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup</title>
+    <title>Sign Up</title>
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        window.onload = function () {
+            const messageType = "<%= message ? message.type : '' %>";
+            const messageText = "<%= message ? message.text : '' %>";
+            if (messageText) {
+                if (messageType === 'error') {
+                    alert("Error: " + messageText);
+                } else if (messageType === 'success') {
+                    alert("Success: " + messageText);
+                }
+            }
+        };
+    </script>
 </head>
+
 <body>
-    <div class="form-container">
-        <h2>Signup</h2>
-        <form action="/signup" method="post">
-            <div class="form-group">
-                <label for="username">Name:</label>
-                <input type="text" name="name" id="username" placeholder="Enter your name" required>
+    <div class="auth-body">
+        <div class="auth-wraper">
+            <div class="auth-featured">
+                <img src="./images/02.jpg" alt="Signup Image">
             </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="text" name="email" id="email" placeholder="Enter your email" required>
+            <div class="auth-form">
+                <h2>Sign Up</h2>
+
+                <!-- Error/Success Message Box -->
+                <% if (message) { %>
+                    <div class="message-box <%= message.type %>">
+                        <p><%= message.text %></p>
+                    </div>
+                <% } %>
+
+                <div class="form-wraper">
+                    <form action="/signup" method="post">
+                        <div class="form-group">
+                            <label for="username">Name</label>
+                            <input style="border:1px solid rgb(0, 0, 0)" name="name" type="text" id="username"
+                                placeholder="Enter your name" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input style="border:1px solid rgb(0, 0, 0)" name="email" type="text" id="email"
+                                placeholder="Enter your email" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input style="border:1px solid rgb(0, 0, 0)" name="password" type="password" id="password"
+                                placeholder="Enter your password" required />
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="utility">
+                    <a href="/login">Already have an account</a>
+                </div>
+                <div class="social-login">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-google"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" name="password" id="password" placeholder="Enter your password" required>
-            </div>
-            <button type="submit" class="submit-btn">SignUp</button>
-        </form>
-         <p>Already have an account? <a href="/">Login</a></p>
+        </div>
     </div>
+
+    <style>
+        .message-box {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .message-box.error {
+            background-color: #ffcccc;
+            color: #cc0000;
+        }
+
+        .message-box.success {
+            background-color: #ccffcc;
+            color: #006600;
+        }
+    </style>
+
 </body>
-</html> 
+
+</html>
+
 

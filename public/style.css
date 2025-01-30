@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 * {
   margin: 0px;
@@ -6,69 +7,6 @@
   box-sizing: border-box;
 }
 
-body {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #e9e9e9;
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.form-container {
-  width: 300px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.form-group input {
-  width: 100%;
-  padding: 8px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-.submit-btn {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #472dbb;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.submit-btn:hover {
-  background-color: #4565a0;
-}
-
-p {
-  margin-top: 15px;
-}
-
-
-
-
-/*
 :root {
   --shadow-01: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   --shadow-02: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
@@ -168,11 +106,12 @@ a:hover {
 .form-group label {
   color: #555;
   font-weight: 200;
+  font-weight: bold;
 }
 
 .form-group button {
   height: 40px;
-  border: 1px solid #d23a6d;
+  border: 1px solid #000000 ;
   border-radius: 5px;
   font-size: 18px;
   background-color: #d23a6d;
@@ -189,8 +128,9 @@ a:hover {
 .utility a {
   font-size: 12px;
   text-decoration: none;
-  color: #bb5d7c;
+  color: #000000;
   font-weight: 200;
+  font-weight: bold;
 }
 
 .social-login {
@@ -223,7 +163,7 @@ a:hover {
 }
 
 .social-login a:nth-child(3) {
-  background-color: #0077b5;
+  background-color: #000000;
 }
 
 .profile-body {
@@ -377,7 +317,7 @@ a:hover {
   background-color: #fff;
   border-radius: 50%;
 }
-/* find friends 
+/* find friends */
 img {
   max-width: 100%;
 }
@@ -489,7 +429,7 @@ ul.friens h4 {
 /* .profile-box {
   height: 100vh;
   overflow-y: scroll;
-} 
+} */
 
 #Fowlingid ul,
 div#Followerid ul {
@@ -544,4 +484,4 @@ div#galleryid .gallery-photo.galleryPhoto img {
 }
 a.activetab {
   background-color: #ddd;
-}*/
+}

@@ -1,30 +1,93 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        window.onload = function () {
+            const messageType = "<%= message ? message.type : '' %>";
+            const messageText = "<%= message ? message.text : '' %>";
+            if (messageText) {
+                if (messageType === 'error') {
+                    alert("Error: " + messageText);
+                } else if (messageType === 'success') {
+                    alert("Success: " + messageText);
+                }
+            }
+        };
+    </script>
 </head>
+
 <body>
-    
-    <div class="form-container">
-        <h2>Login</h2>
-        <form action="/login" method="post">
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    <div class="auth-body">
+        <div class="auth-wraper">
+            <div class="auth-featured">
+                <img src="/images/01.jpg" alt="Login Image">
             </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <div class="auth-form">
+                <h2>Sign In</h2>
+
+                <!-- Error/Success Message Box -->
+                <% if (message) { %>
+                    <div class="message-box <%= message.type %>">
+                        <p><%= message.text %></p>
+                    </div>
+                <% } %>
+
+                <div class="form-wraper">
+                    <form action="/login" method="post">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input style="border:1px solid rgb(0, 0, 0)" id="email" name="email" type="email"
+                                placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input style="border:1px solid rgb(0, 0, 0)" id="password" name="password" type="password"
+                                placeholder="Enter your password" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Log In</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="utility">
+                    <a href="/signup">Create an account</a>
+                </div>
+                <div class="social-login">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-google"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
             </div>
-            <button type="submit" class="submit-btn">Login</button>
-        </form>        
-        <p>Don't have an account? <a href="/signup">Signup</a></p>
+        </div>
     </div>
 
-</body>
-</html>
+    <style>
+        .message-box {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            text-align: center;
+            font-weight: bold;
+        }
 
+        .message-box.error {
+            background-color: #ffcccc;
+            color: #cc0000;
+        }
+
+        .message-box.success {
+            background-color: #ccffcc;
+            color: #006600;
+        }
+    </style>
+
+</body>
+
+</html>
